@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Orders - Ceylon Spice Treasures</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-amber-50 text-amber-900 font-inter">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="text-2xl font-bold text-amber-800">
+                    <span class="text-amber-500">Ceylon</span> Spice
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-amber-800 hover:text-amber-500 transition">Home</a>
+                    <a href="products.html" class="text-amber-800 hover:text-amber-500 transition">Products</a>
+                    <a href="heritage.html" class="text-amber-800 hover:text-amber-500 transition">Heritage</a>
+                    <a href="contact.html" class="text-amber-800 hover:text-amber-500 transition font-bold">Contact</a>
+                </div>
+                <button class="bg-amber-500 text-white px-6 py-2 rounded-full hover:bg-amber-600 transition">
+                    🛒 Cart
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-8 px-4 bg-gradient-to-br from-amber-50 to-red-50">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-5xl font-bold text-amber-800 mb-4 playfair">
+                Contact <span class="text-amber-500">Us</span>
+            </h1>
+            <p class="text-lg text-amber-700 mb-8">
+                Have questions or ready to place an order? We'd love to hear from you!
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Grid -->
+    <section class="py-16 px-4 bg-amber-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Phone Contact -->
+                <div class="contact-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition text-center">
+                    <div class="text-5xl mb-4">📞</div>
+                    <h3 class="text-2xl font-bold text-amber-800 mb-2 playfair">Call Us</h3>
+                    <p class="text-amber-700 mb-2">Available Mon-Fri, 9AM-5PM</p>
+                    <a href="tel:+94123456789" class="text-amber-500 font-bold hover:text-amber-600">+94 123 456 789</a>
+                </div>
+
+                <!-- Email Contact -->
+                <div class="contact-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition text-center">
+                    <div class="text-5xl mb-4">📧</div>
+                    <h3 class="text-2xl font-bold text-amber-800 mb-2 playfair">Email Us</h3>
+                    <p class="text-amber-700 mb-2">We respond within 24 hours</p>
+                    <a href="mailto:info@ceylonspice.com" class="text-amber-500 font-bold hover:text-amber-600">info@ceylonspice.com</a>
+                </div>
+
+                <!-- WhatsApp Contact -->
+                <div class="contact-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition text-center">
+                    <div class="text-5xl mb-4">💬</div>
+                    <h3 class="text-2xl font-bold text-amber-800 mb-2 playfair">WhatsApp</h3>
+                    <p class="text-amber-700 mb-2">Quick ordering available</p>
+                    <a href="https://wa.me/94123456789" target="_blank" class="text-green-500 font-bold hover:text-green-600">Chat on WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- Contact Form & Map -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Form -->
+                <div class="contact-section">
+                    <h2 class="text-3xl font-bold text-amber-800 mb-8 playfair">Send us a Message</h2>
+                    <form id="contactForm" class="space-y-6">
+                        <!-- Name -->
+                        <div class="form-group">
+                            <label class="block text-amber-800 font-semibold mb-2">Full Name *</label>
+                            <input type="text" id="name" required class="w-full px-4 py-3 border-2 border-amber-300 rounded-lg focus:outline-none focus:border-amber-500 transition" placeholder="Your name">
+                            <span class="error-message text-red-500 text-sm hidden"></span>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label class="block text-amber-800 font-semibold mb-2">Email Address *</label>
+                            <input type="email" id="email" required class="w-full px-4 py-3 border-2 border-amber-300 rounded-lg focus:outline-none focus:border-amber-500 transition" placeholder="your@email.com">
+                            <span class="error-message text-red-500 text-sm hidden"></span>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="form-group">
+                            <label class="block text-amber-800 font-semibold mb-2">Phone Number</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 border-2 border-amber-300 rounded-lg focus:outline-none focus:border-amber-500 transition" placeholder="+94 XXX XXX XXX">
+                        </div>
+
+                        <!-- Subject -->
+                        <div class="form-group">
+                            <label class="block text-amber-800 font-semibold mb-2">Subject *</label>
+                            <select id="subject" required class="w-full px-4 py-3 border-2 border-amber-300 rounded-lg focus:outline-none focus:border-amber-500 transition">
+                                <option value="">Select a subject</option>
+                                <option value="order">Place an Order</option>
+                                <option value="inquiry">Product Inquiry</option>
+                                <option value="wholesale">Wholesale Request</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <span class="error-message text-red-500 text-sm hidden"></span>
+                        </div>
+
+                        <!-- Message -->
+                        <div class="form-group">
+                            <label class="block text-amber-800 font-semibold mb-2">Message *</label>
+                            <textarea id="message" required rows="5" class="w-full px-4 py-3 border-2 border-amber-300 rounded-lg focus:outline-none focus:border-amber-500 transition resize-none" placeholder="Share your thoughts with us..."></textarea>
+                            <span class="error-message text-red-500 text-sm hidden"></span>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex gap-4">
+                            <button type="submit" class="flex-1 bg-amber-500 text-white py-3 rounded-lg hover:bg-amber-600 transition font-bold">
+                                Send Message
+                            </button>
+                            <button type="button" id="whatsappBtn" class="flex-1 bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition font-bold">
+                                Send via WhatsApp
+                            </button>
+                        </div>
+
+                        <!-- Success Message -->
+                        <div id="successMessage" class="hidden bg-green-100 border-l-4 border-green-500 text-green-700 p-4 rounded">
+                            ✓ Thank you! We'll get back to you soon.
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Info & Map -->
+                <div class="contact-section">
+                    <h2 class="text-3xl font-bold text-amber-800 mb-8 playfair">Get in Touch</h2>
+                    
+                    <!-- Location Info -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg mb-8">
+                        <h3 class="text-xl font-bold text-amber-800 mb-4">📍 Visit Us</h3>
+                        <p class="text-amber-700 mb-2">Mahiyanganaya Spice Estate</p>
+                        <p class="text-amber-700 mb-6">Mahiyanganaya, Central Province</p>
+                        <p class="text-amber-700 mb-8">Sri Lanka</p>
+                        <button class="w-full bg-amber-100 text-amber-800 py-2 rounded-lg hover:bg-amber-200 transition font-semibold">
+                            Get Directions
+                        </button>
+                    </div>
+
+                    <!-- Business Hours -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <h3 class="text-xl font-bold text-amber-800 mb-4">🕐 Business Hours</h3>
+                        <div class="space-y-2 text-amber-700">
+                            <div class="flex justify-between">
+                                <span>Monday - Friday:</span>
+                                <span class="font-semibold">9:00 AM - 5:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Saturday:</span>
+                                <span class="font-semibold">10:00 AM - 3:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Sunday:</span>
+                                <span class="font-semibold">Closed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold text-center text-amber-800 mb-12 playfair">
+                Frequently Asked Questions
+            </h2>
+            <div class="space-y-6">
+                <details class="faq-item bg-amber-50 rounded-lg p-6 cursor-pointer group">
+                    <summary class="font-bold text-amber-800 text-lg select-none flex justify-between items-center">
+                        How long does shipping take?
+                        <span class="text-amber-500 group-open:rotate-180 transition">▼</span>
+                    </summary>
+                    <p class="text-amber-700 mt-4">
+                        Standard shipping within Sri Lanka takes 3-5 business days. International orders typically arrive within 10-15 business days depending on destination.
+                    </p>
+                </details>
+
+                <details class="faq-item bg-amber-50 rounded-lg p-6 cursor-pointer group">
+                    <summary class="font-bold text-amber-800 text-lg select-none flex justify-between items-center">
+                        Are your spices organic?
+                        <span class="text-amber-500 group-open:rotate-180 transition">▼</span>
+                    </summary>
+                    <p class="text-amber-700 mt-4">
+                        Yes! All our spices are grown using traditional organic methods without harmful pesticides. We're certified by international organic standards.
+                    </p>
+                </details>
+
+                <details class="faq-item bg-amber-50 rounded-lg p-6 cursor-pointer group">
+                    <summary class="font-bold text-amber-800 text-lg select-none flex justify-between items-center">
+                        Do you offer bulk/wholesale orders?
+                        <span class="text-amber-500 group-open:rotate-180 transition">▼</span>
+                    </summary>
+                    <p class="text-amber-700 mt-4">
+                        Absolutely! We offer special rates for bulk and wholesale orders. Contact us directly for a custom quote.
+                    </p>
+                </details>
+
+                <details class="faq-item bg-amber-50 rounded-lg p-6 cursor-pointer group">
+                    <summary class="font-bold text-amber-800 text-lg select-none flex justify-between items-center">
+                        What's your return policy?
+                        <span class="text-amber-500 group-open:rotate-180 transition">▼</span>
+                    </summary>
+                    <p class="text-amber-700 mt-4">
+                        We offer a 30-day money-back guarantee if you're not completely satisfied with your purchase. No questions asked!
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-amber-900 text-white py-8 px-4">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div>
+                <h4 class="font-bold mb-4">About Us</h4>
+                <p class="text-amber-100">Ceylon Spice Treasures brings authentic Sri Lankan spices to the world.</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-amber-100">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="heritage.html">Heritage</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Follow Us</h4>
+                <ul class="space-y-2 text-amber-100">
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Contact</h4>
+                <p class="text-amber-100">📍 Mahiyanganaya, Sri Lanka</p>
+                <p class="text-amber-100">📞 +94 123 456 789</p>
+            </div>
+        </div>
+        <div class="border-t border-amber-700 pt-8 text-center text-amber-100">
+            <p>&copy; 2026 Ceylon Spice Treasures. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const contactForm = document.getElementById('contactForm');
+        const whatsappBtn = document.getElementById('whatsappBtn');
+        const successMessage = document.getElementById('successMessage');
+
+        // Form submission
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Simple validation
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all required fields');
+                return;
+            }
+
+            // Show success message
+            successMessage.classList.remove('hidden');
+            
+            // Reset form
+            contactForm.reset();
+            
+            // Hide success message after 3 seconds
+            setTimeout(() => {
+                successMessage.classList.add('hidden');
+            }, 3000);
+
+            // Log submission (in real app, send to server)
+            console.log({ name, email, phone, subject, message });
+        });
+
+        // WhatsApp button
+        whatsappBtn.addEventListener('click', () => {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            let whatsappMessage = '';
+            if (name) whatsappMessage += `Name: ${name}\n`;
+            if (email) whatsappMessage += `Email: ${email}\n`;
+            if (phone) whatsappMessage += `Phone: ${phone}\n`;
+            if (subject) whatsappMessage += `Subject: ${subject}\n`;
+            if (message) whatsappMessage += `Message: ${message}`;
+
+            const encodedMessage = encodeURIComponent(whatsappMessage || 'Hello, I would like to inquire about your products!');
+            window.open(`https://wa.me/94123456789?text=${encodedMessage}`, '_blank');
+        });
+
+        // Real-time form validation
+        ['name', 'email', 'subject', 'message'].forEach(fieldId => {
+            const field = document.getElementById(fieldId);
+            field.addEventListener('blur', function() {
+                if (this.value.trim() === '') {
+                    this.classList.add('border-red-500');
+                } else {
+                    this.classList.remove('border-red-500');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
