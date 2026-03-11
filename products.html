@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products - Ceylon Spice Treasures</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-amber-50 text-amber-900 font-inter">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="text-2xl font-bold text-amber-800">
+                    <span class="text-amber-500">Ceylon</span> Spice
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-amber-800 hover:text-amber-500 transition">Home</a>
+                    <a href="products.html" class="text-amber-800 hover:text-amber-500 transition font-bold">Products</a>
+                    <a href="heritage.html" class="text-amber-800 hover:text-amber-500 transition">Heritage</a>
+                    <a href="contact.html" class="text-amber-800 hover:text-amber-500 transition">Contact</a>
+                </div>
+                <button class="bg-amber-500 text-white px-6 py-2 rounded-full hover:bg-amber-600 transition">
+                    🛒 Cart
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-8 px-4 bg-gradient-to-br from-amber-50 to-red-50">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-5xl font-bold text-amber-800 mb-4 playfair">
+                Our Spice <span class="text-amber-500">Collection</span>
+            </h1>
+            <p class="text-lg text-amber-700 mb-8">
+                Discover the finest selection of authentic Sri Lankan spices, each with its own unique aroma profile.
+            </p>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="py-8 px-4 bg-white border-b border-amber-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col sm:flex-row gap-4 items-center">
+                <div>
+                    <label class="font-semibold text-amber-800 mr-4">Filter by Heat Level:</label>
+                    <select id="heatFilter" class="px-4 py-2 border border-amber-300 rounded-lg focus:outline-none focus:border-amber-500">
+                        <option value="">All Heat Levels</option>
+                        <option value="mild">Mild 🧊</option>
+                        <option value="medium">Medium 🔥</option>
+                        <option value="hot">Hot 🔥🔥🔥</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="font-semibold text-amber-800 mr-4">Filter by Usage:</label>
+                    <select id="usageFilter" class="px-4 py-2 border border-amber-300 rounded-lg focus:outline-none focus:border-amber-500">
+                        <option value="">All Uses</option>
+                        <option value="cooking">Cooking 👨‍🍳</option>
+                        <option value="medicinal">Medicinal 💊</option>
+                        <option value="both">Both</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="py-16 px-4 bg-amber-50">
+        <div class="max-w-7xl mx-auto">
+            <div id="productsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product Card Template -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-amber-900 text-white py-8 px-4">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div>
+                <h4 class="font-bold mb-4">About Us</h4>
+                <p class="text-amber-100">Ceylon Spice Treasures brings authentic Sri Lankan spices to the world.</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-amber-100">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="heritage.html">Heritage</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Follow Us</h4>
+                <ul class="space-y-2 text-amber-100">
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Contact</h4>
+                <p class="text-amber-100">📍 Mahiyanganaya, Sri Lanka</p>
+                <p class="text-amber-100">📞 +94 123 456 789</p>
+            </div>
+        </div>
+        <div class="border-t border-amber-700 pt-8 text-center text-amber-100">
+            <p>&copy; 2026 Ceylon Spice Treasures. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const products = [
+            {
+                id: 1,
+                name: 'Turmeric Powder - Premium',
+                heat: 'mild',
+                usage: 'both',
+                price: 'LKR 450',
+                emoji: '✨',
+                color: 'from-yellow-300 to-yellow-500',
+                aroma: 'Warm, earthy with subtle sweetness',
+                description: 'Premium quality turmeric powder perfect for golden milk and authentic curries.'
+            },
+            {
+                id: 2,
+                name: 'Red Chili Powder',
+                heat: 'hot',
+                usage: 'cooking',
+                price: 'LKR 380',
+                emoji: '🔥',
+                color: 'from-red-400 to-red-600',
+                aroma: 'Bold, spicy with smoky undertones',
+                description: 'Pure ground red chili peppers for authentic Sri Lankan cuisine.'
+            },
+            {
+                id: 3,
+                name: 'Black Pepper - Coarse',
+                heat: 'medium',
+                usage: 'cooking',
+                price: 'LKR 520',
+                emoji: '🫑',
+                color: 'from-gray-600 to-gray-800',
+                aroma: 'Sharp, peppery with citrus notes',
+                description: 'Freshly ground black pepper from Matara highlands.'
+            },
+            {
+                id: 4,
+                name: 'Cinnamon Sticks',
+                heat: 'mild',
+                usage: 'both',
+                price: 'LKR 680',
+                emoji: '🌳',
+                color: 'from-amber-600 to-amber-800',
+                aroma: 'Sweet, warm, comforting',
+                description: 'Real Ceylon cinnamon - the finest quality available.'
+            },
+            {
+                id: 5,
+                name: 'Cloves - Whole',
+                heat: 'mild',
+                usage: 'both',
+                price: 'LKR 890',
+                emoji: '🌰',
+                color: 'from-purple-600 to-purple-800',
+                aroma: 'Floral, minty, intensely aromatic',
+                description: 'Whole organic cloves for tea and traditional medicine.'
+            },
+            {
+                id: 6,
+                name: 'Cardamom Pods - Green',
+                heat: 'mild',
+                usage: 'both',
+                price: 'LKR 1200',
+                emoji: '💚',
+                color: 'from-green-400 to-green-600',
+                aroma: 'Fresh, floral, slightly citrusy',
+                description: 'Premium green cardamom pods perfect for chai and desserts.'
+            }
+        ];
+
+        function renderProducts(filter = {}) {
+            const grid = document.getElementById('productsGrid');
+            grid.innerHTML = '';
+            
+            const filtered = products.filter(p => {
+                if (filter.heat && p.heat !== filter.heat) return false;
+                if (filter.usage && p.usage !== filter.usage && filter.usage !== 'both') return false;
+                return true;
+            });
+
+            filtered.forEach((product, index) => {
+                const card = document.createElement('div');
+                card.className = 'product-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:scale-105 cursor-pointer';
+                card.innerHTML = `
+                    <div class="h-48 bg-gradient-to-br ${product.color} flex items-center justify-center">
+                        <div class="text-7xl">${product.emoji}</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-amber-800 mb-2 playfair">${product.name}</h3>
+                        <p class="text-sm text-amber-600 mb-2 italic">Aroma: ${product.aroma}</p>
+                        <p class="text-amber-700 mb-4">${product.description}</p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="font-bold text-lg text-amber-600">${product.price}</span>
+                            <span class="text-sm bg-amber-100 text-amber-800 px-3 py-1 rounded-full">
+                                ${product.heat === 'mild' ? '🧊 Mild' : product.heat === 'medium' ? '🔥 Medium' : '🔥🔥🔥 Hot'}
+                            </span>
+                        </div>
+                        <button class="w-full bg-amber-500 text-white py-2 rounded-lg hover:bg-amber-600 transition font-semibold">
+                            Add to Cart
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+                
+                // Stagger animation
+                gsap.from(card, {
+                    opacity: 0,
+                    y: 20,
+                    delay: index * 0.1,
+                    duration: 0.6
+                });
+            });
+        }
+
+        // Initial render
+        renderProducts();
+
+        // Filter listeners
+        document.getElementById('heatFilter').addEventListener('change', (e) => {
+            renderProducts({
+                heat: e.target.value,
+                usage: document.getElementById('usageFilter').value
+            });
+        });
+
+        document.getElementById('usageFilter').addEventListener('change', (e) => {
+            renderProducts({
+                heat: document.getElementById('heatFilter').value,
+                usage: e.target.value
+            });
+        });
+    </script>
+</body>
+</html>
