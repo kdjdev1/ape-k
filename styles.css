@@ -1,0 +1,261 @@
+/* Custom Tailwind Theme Extensions */
+:root {
+    --color-turmeric-gold: #FFB800;
+    --color-chili-red: #B22222;
+    --color-cinnamon: #3E2723;
+    --color-clay: #FDF5E6;
+}
+
+/* Typography */
+.playfair {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: -0.5px;
+}
+
+.font-inter {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom button effects */
+.magnetic-button {
+    position: relative;
+    overflow: hidden;
+}
+
+.magnetic-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.magnetic-button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Glassomorphism effect */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Product card hover effects */
+.product-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+    z-index: 1;
+}
+
+.product-card:hover::before {
+    left: 100%;
+}
+
+/* Contact cards animation */
+.contact-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Form inputs */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 3px rgba(255, 184, 0, 0.1);
+}
+
+/* FAQ styling */
+.faq-item {
+    transition: all 0.3s ease;
+}
+
+.faq-item[open] {
+    background-color: rgba(255, 184, 0, 0.1);
+    border-left: 4px solid var(--color-turmeric-gold);
+}
+
+/* Parallax effect */
+.parallax-image {
+    position: relative;
+}
+
+/* Value proposition animation */
+.value-prop {
+    animation: slideUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.value-prop:nth-child(1) { animation-delay: 0.1s; }
+.value-prop:nth-child(2) { animation-delay: 0.2s; }
+.value-prop:nth-child(3) { animation-delay: 0.3s; }
+.value-prop:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll reveal animation */
+.scroll-reveal {
+    opacity: 0;
+    animation: slideUp 0.6s ease-out forwards;
+}
+
+/* Hero text animations */
+.hero-text {
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.hero-image {
+    animation: slideInRight 0.8s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Staggered card animations */
+.scroll-stagger {
+    opacity: 0;
+}
+
+.scroll-stagger.visible {
+    animation: slideUp 0.6s ease-out forwards;
+}
+
+/* Timeline styling */
+.timeline-item {
+    opacity: 0;
+    animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.2s; }
+.timeline-item:nth-child(3) { animation-delay: 0.3s; }
+.timeline-item:nth-child(4) { animation-delay: 0.4s; }
+
+/* Hover effects */
+.group {
+    transition: all 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .playfair {
+        font-size: 1.75rem;
+    }
+    
+    .glass {
+        background: rgba(255, 255, 255, 0.15);
+    }
+}
+
+/* Loading animation */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Text shadows for depth */
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(62, 39, 35, 0.2);
+}
+
+/* Spice-themed utilities */
+.rounded-spice {
+    border-radius: 24px;
+}
+
+.shadow-spice {
+    box-shadow: 0 10px 30px rgba(255, 184, 0, 0.2);
+}
+
+.shadow-spice-lg {
+    box-shadow: 0 20px 40px rgba(255, 184, 0, 0.3);
+}
+
+/* Breadcrumb styling */
+.breadcrumb {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.breadcrumb a {
+    color: var(--color-turmeric-gold);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+    color: var(--color-chili-red);
+}
